@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web3 Cohort</title>
+<style type="text/css">
+        table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #4285f487
+}
+</style>
+</head>
+<body>
+
+<h1>LEADERBOARD</h1>
+<p><button onclick="sortTable()">Sort</button></p>
+
+<table id="myTable">
+  <tr>
+    <th>POINTS</th>
+    <th>Name</th>
+  </tr>
+  <tr>
+    <td id="p8">8</td>
+    <td>Player 8</td>
+    <td><button onclick="addp8()">Complete Task</button></td>
+  </tr>
+  <tr>
+    <td id="p9">9</td>
+    <td>Player 9</td>
+    <td><button onclick="addp9()">Complete Task</button></td>
+  </tr>
+  <tr>
+    <td id="p10">10</td>
+    <td>Player 10</td>
+    <td><button onclick="addp10()">Complete Task</button></td>
+  </tr>
+  <tr>
+    <td id="p5">5</td>
+    <td>Player 5</td>
+    <td><button onclick="addp5()">Complete Task</button></td>
+  </tr>
+  <tr>
+    <td id="p3">3</td>
+    <td>Player 3</td>
+    <td><button onclick="addp3()">Complete Task</button></td>
+  </tr>
+  <tr>
+    <td id="p6">6</td>
+    <td>Player 6</td>
+    <td><button onclick="addp6()">Complete Task</button></td>
+  </tr>
+  <tr>
+    <td id="p2">2</td>
+    <td>Player 2</td>
+    <td><button onclick="addp2()">Complete Task</button></td>
+  </tr>
+  <tr>
+   <td id="p1">1</td>
+    <td>Player 1</td>
+    <td><button onclick="addp1()">Complete Task</button></td>
+  </tr>
+  <tr>
+    <td id="p7">7</td>
+    <td>Player 7</td>
+    <td><button onclick="addp7()">Complete Task</button></td>
+  </tr>
+  <tr>
+   <td id="p8">4</td>
+    <td>Player 4</td>
+    <td><button onclick="addp4()">Complete Task</button></td>
+  </tr>
+ 
+</table>
+
+<script>
+function addp1(){
+        element = Number(document.getElementById("p1").innerHTML);
+        document.getElementById("p1").innerHTML = element +1;
+        sortTable();
+}
+function addp2(){
+        element = Number(document.getElementById("p2").innerHTML);
+        document.getElementById("p2").innerHTML = element +1;
+        sortTable();
+}
+function addp3(){
+        element = Number(document.getElementById("p3").innerHTML);
+        document.getElementById("p3").innerHTML = element +1;
+        sortTable();
+}
+function addp4(){
+        element = Number(document.getElementById("p4").innerHTML);
+        document.getElementById("p4").innerHTML = element +1;
+        sortTable();
+}
+function addp5(){
+        element = Number(document.getElementById("p5").innerHTML);
+        document.getElementById("p5").innerHTML = element +1;
+        sortTable();
+}
+function addp6(){
+        element = Number(document.getElementById("p6").innerHTML);
+        document.getElementById("p6").innerHTML = element +1;
+        sortTable();
+}
+function addp7(){
+        element = Number(document.getElementById("p7").innerHTML);
+        document.getElementById("p7").innerHTML = element +1;
+        sortTable();
+}
+function addp8(){
+        element = Number(document.getElementById("p8").innerHTML);
+        document.getElementById("p8").innerHTML = element +1;
+        sortTable();
+}
+function add9(){
+        element = Number(document.getElementById("p9").innerHTML);
+        document.getElementById("p9").innerHTML = element +1;
+        sortTable();
+}
+function addp10(){
+        element = Number(document.getElementById("p10").innerHTML);
+        document.getElementById("p10").innerHTML = element +1;
+        sortTable();
+}
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("myTable");
+  switching = true;
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("TD")[0];
+      y = rows[i + 1].getElementsByTagName("TD")[0];
+      if (Number(x.innerHTML) < Number(y.innerHTML)) {
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+
+    }
+  }
+}
+</script>
+
+</body>
+</html>
